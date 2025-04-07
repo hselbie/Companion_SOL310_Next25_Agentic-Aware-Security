@@ -1,0 +1,246 @@
+# =============================================================================
+#                            Gitignore File
+# =============================================================================
+# Purpose: Specifies intentionally untracked files that Git should ignore.
+# Project Type: Python
+# Virtual Env: venv_nr (explicitly ignored)
+# IDE: Visual Studio Code (VS Code)
+#
+# Notes:
+# - Lines starting with '#' are comments.
+# - A '/' at the end of a pattern signifies a directory.
+# - '*' matches zero or more characters.
+# - '?' matches a single character.
+# - '!' negates a pattern (un-ignores a file previously ignored).
+# - Review and customize this file for your specific project needs.
+# - For more patterns, see https://github.com/github/gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Virtual Environment
+# -----------------------------------------------------------------------------
+# Ignore the virtual environment directory specified by the user.
+# NEVER commit your virtual environment.
+venv_nr/
+
+# Also ignore common alternative virtual env names, just in case.
+# Comment these out if you are certain only 'venv_nr' will ever be used.
+# venv/
+# .venv/
+# env/
+# .env/
+# ENV/
+# env.bak/
+# venv.bak/
+
+# -----------------------------------------------------------------------------
+# IDE specific files - Visual Studio Code
+# -----------------------------------------------------------------------------
+# VS Code workspace settings, debugging configurations, task configurations, etc.
+# It's generally recommended to ignore this entire directory.
+# If your team wants to share specific settings (like formatters or debug configs),
+# you can explicitly UN-ignore specific files using '!'.
+# Example:
+#   !.vscode/settings.json
+#   !.vscode/launch.json
+#   !.vscode/extensions.json
+.vscode/
+
+# VS Code local history (older extension, might still exist)
+.history/
+
+# -----------------------------------------------------------------------------
+# Python Artifacts
+# -----------------------------------------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]  # .pyc, .pyo, .pyd
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+dist/
+build/
+develop-eggs/
+*.egg-info/
+.eggs/
+sdist/
+*.egg
+*.whl
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+pytestdebug.log
+
+# Type checker cache/artefacts
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+cython_debug/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Celery task results
+*.celery.pid
+*.celery.beat.db
+
+# -----------------------------------------------------------------------------
+# Operating System Files
+# -----------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux / Other Editor Backups
+*~
+*.sw[op] # Vim swap files: .swp, .swo
+*.bak
+*.tmp
+
+# -----------------------------------------------------------------------------
+# Build Systems & Package Managers (beyond standard Python)
+# -----------------------------------------------------------------------------
+# Conda
+conda-meta/
+*/conda-meta/
+
+# Node (if using JS tools alongside Python, e.g., for frontend)
+# node_modules/
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+# package-lock.json # Usually committed, but ignore if auto-generated locally
+# yarn.lock         # Usually committed, but ignore if auto-generated locally
+
+# -----------------------------------------------------------------------------
+# Testing Frameworks & Tools
+# -----------------------------------------------------------------------------
+.tox/
+.nox/
+nosetests.xml
+# Add any other specific test output directories/files here
+
+# -----------------------------------------------------------------------------
+# Documentation Generation
+# -----------------------------------------------------------------------------
+# Sphinx documentation build outputs
+docs/_build/
+# MkDocs documentation build outputs
+site/
+
+# -----------------------------------------------------------------------------
+# Sensitive Data & Configuration - CRITICAL
+# -----------------------------------------------------------------------------
+# NEVER commit secrets, credentials, API keys, passwords, etc.
+# Use environment variables, configuration management tools, or secret managers.
+
+# Environment variables files
+.env
+.env.*
+!*.env.example # Allow example env files
+
+# Configuration files that might contain secrets
+config.local.py
+settings.local.py
+local_settings.py
+*.local.*
+
+# Credentials & Keys
+*.key
+*.pem
+*.cer
+*.p12
+*.pfx
+*.token
+credentials.*
+secrets.*
+*.secret
+
+# SSH keys (should not be in project repo anyway)
+id_rsa
+id_dsa
+*.pub
+
+# Cloud Provider Credentials (should not be in project repo anyway)
+.aws/
+aws/credentials
+.google/
+gcloud/
+
+# Shell history (should not be in project repo anyway)
+.bash_history
+.zsh_history
+
+# -----------------------------------------------------------------------------
+# Miscellaneous
+# -----------------------------------------------------------------------------
+# Log files
+*.log
+logs/
+
+# Database files (e.g., SQLite - unless intended to be versioned)
+*.db
+*.sqlite
+*.sqlite3
+# *.sql # Be careful, might want to track schema definition SQL files
+
+# Temporary files / directories
+temp/
+tmp/
+*.tmp
+
+# Downloaded files / data (unless source data that needs tracking)
+# data/
+# downloads/
+
+# Compiled outputs from other languages (if used)
+# *.o
+# *.a
+# *.lib
+# *.dll
+# *.exe
+
+# Editor-specific metadata (beyond VS Code)
+.idea/ # JetBrains IDEs (PyCharm, IntelliJ)
+*.iml # JetBrains module files
+nbproject/ # NetBeans
+.project # Eclipse
+.settings/ # Eclipse
+
+# =============================================================================
+#                        End of Gitignore File
+# =============================================================================
